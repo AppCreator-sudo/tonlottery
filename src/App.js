@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { TonConnectUI } from '@tonconnect/ui';
+import '@tonconnect/sdk'
+
 
 const App = () => {
     useEffect(() => {
