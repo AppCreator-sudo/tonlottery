@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { TonConnectUI } from '@tonconnect/ui';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    useEffect(() => {
+        // Инициализация TON Connect UI
+        const tonConnectUI = new TonConnectUI({
+            manifestUrl: 'https://your-domain.com/tonconnect-manifest.json', // Замените на ваш URL манифеста
+        });
+
+        // Встраивание кнопки в интерфейс
+        tonConnectUI.renderButton({
+            buttonRootId: 'ton-connect-button', // ID элемента для рендера кнопки
+        });
+
+        // Опционально: подписка на события
+        tonConnectUI.onStatusChange((status) => {
+            console.log('TON Connect status:', status);
+        });
+    }, []);
+
+    return (
+        <div>
+            <h1>TON Connect UI Example</h1>
+            <div id="ton-connect-button"></div>
+        </div>
+    );
+};
 
 export default App;
