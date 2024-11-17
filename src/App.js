@@ -5,7 +5,7 @@ const App = () => {
     useEffect(() => {
         // Инициализация TON Connect UI
         const tonConnectUI = new TonConnectUI({
-            manifestUrl: 'https://your-domain.com/tonconnect-manifest.json', // Замените на ваш URL манифеста
+            manifestUrl: 'https://appcreator-sudo-tonlottery-9f43.twc1.net/tonconnect-manifest.json', // Замените на ваш URL манифеста
         });
 
         // Встраивание кнопки в интерфейс
